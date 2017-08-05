@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<title>订单列表</title>
+	 <style>
+	 a{ 
+		color:black;
+		text-decoration: none;
+	}
+        #div1 {
+            padding:50px;
+            width:1050px;
+            height:auto;
+            font-family:arial;
+            font-size:25px;
+            font-weight:blod;
+            text-align:left;
+           
+        }
+        #div2 {
+            width:690px;
+         	height:auto;
+            font-family:arial;
+            font-size:14px;
+            padding:25px;
+        }
+        table,table tr th, table tr td { border:1px solid #999999; }
+        table { width: 690px;text-align: center; border-collapse: collapse; padding:2px;} 
+        tr { height:110px;}
+		#head{
+			height: 110px;
+			width: 1452px;
+			background: #FF6666;
+		}
+		.title{
+			color: white;
+			font-size: 20px;
+			position: absolute;
+			top: 30px;
+			font-weight: bold;
+		}
+		.title:hover{
+			color: pink;
+		}
+		#shoppingcar{
+			background: white;
+			height: 50px;
+			width:130px;
+			position: absolute;
+			top: 30px;
+			line-height: 50px;
+			left: 1400px;
+			font-weight: bold;
+			padding-left:40px;
+		}
+
+    </style>
+</head>
+<body>
+	<center>
+	<div id="head">
+		<img th:src="@{/images/logo.png}" src="../images/logo.png" style="width: 230px;height: 110px;position: absolute;top:10px;left: 230px"/>
+		<p class="title" style="left: 550px"><a href="index.html" th:href="@{/}">首页</a></p>
+		<p class="title" style="left: 670px"><a href="person.html" th:href="@{/person}">个人设置</a></p>
+		<p class="title" style="left: 830px"><a href="order.html" th:href="@{/order}">我的订单</a></p>
+		<div id="shoppingcar"><a href="cart.html" th:href="@{/cart}"><img th:src="@{/images/title.png}" src="../images/title.png" style="top: 8px;left:10px; position:absolute;"/> 我的购物车</a></div>
+	</div>
+
+	<div id="div1"><b>我的订单</b></div>
+	<div id="div2">
+		<table>
+			<thead>
+				<tr>
+				    <th width="25%">订单号</th>
+					<th width="40%">下单时间</th>
+					<th width="20%">订单状态</th>
+					<th width="15%">详情</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="myOrder:${myOrders}">
+				    <td width="25%" th:text="${myOrder.id}"></td>
+					<td width="40%" th:text="${myOrder.riseTime}"></td>
+					<td width="20%" th:switch="${myOrder.state}">
+						<p th:case="true">已完成</p>
+						<p th:case="false">未完成</p>
+					</td>
+					<td width="15%"><a href="orderdetail.html" th:href="@{/orderdetail/{orderid}(orderid=${myOrder.id})}">详情</a></td>
+				</tr>
+				
+			</tbody>
+		</table>
+	</div>
+
+	<footer id="bottom">
+	<img id="botton" src="../images/botton.png" th:src="@{/images/botton.png}" style="width: 1452px;"/>
+	</footer>
+	</center>
+</body>
+</html>

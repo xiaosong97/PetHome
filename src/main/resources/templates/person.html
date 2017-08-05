@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<title>个人中心</title>
+	<style>
+	a{ 
+		color:black;
+		text-decoration: none;
+	}
+	
+        #div1 {
+        	width: 100px;
+			height: 22px;
+			left:500px;
+			top: 153px;
+            position: absolute;
+           
+            font-family: arial;
+            font-size: 18px;
+            color: #FF6666;
+        }
+         #div2 {
+        	width: 406px;
+			height: 320px;
+			left: 699px;
+			top: 240px;
+            position: absolute;
+    
+            font-family: arial;
+            font-size: 16px;
+        }
+         #head{
+			height: 110px;
+			width: 1452px;
+			background: #FF6666;
+		}
+		.title{
+			color: white;
+			font-size: 20px;
+			position: absolute;
+			top: 30px;
+			font-weight: bold;
+		}
+		.title:hover{
+			color: pink;
+		}
+		#shoppingcar{
+			background: white;
+			height: 50px;
+			width:130px;
+			position: absolute;
+			top: 30px;
+			line-height: 50px;
+			left: 1400px;
+			font-weight: bold;
+			padding-left:40px;
+		}
+       </style>
+</head>
+<body>
+	<center>
+	<div id="head"></div>
+		<img th:src="@{/images/logo.png}" src="../images/logo.png" style="width: 230px;height: 110px;position: absolute;top:10px;left: 230px"/>
+		<p class="title" style="left: 550px"><a href="index.html" th:href="@{/}">首页</a></p>
+		<p class="title" style="left: 670px"><a href="person.html" th:href="@{/person}">个人设置</a></p>
+		<p class="title" style="left: 830px"><a href="order.html" th:href="@{/order}">我的订单</a></p>
+		<div id="shoppingcar"><a href="cart.html" th:href="@{/cart}"><img th:src="@{/images/title.png}" src="../images/title.png" style="top: 8px;left:10px; position:absolute;"/> 我的购物车</a></div>
+		<img th:src="@{/images/u686.jpg}" src="../images/u686.jpg" style="width: 1452px;height: 650px;z-index: -1212121"/>
+	</center>
+	<div id="div1">
+		<p><b>基本信息</b></p>
+	</div>
+	<div id="div2">
+		<form action="#" th:href="@{/person}" th:object="${member}" method="post">
+		<a style="color: red">*</a>用户名:
+		<input th:field="*{name}" type="text" name="用户名" disabled="disabled" style="width: 315px;height: 25px;float: right;"/>
+		<br></br>
+		<br></br>
+		性别：
+		<label> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input th:field="*{sex}" type="radio" name="mode" value="'男'"/>男
+    	</label>
+    	<label>
+        <input th:field="*{sex}" type="radio" name="mode" value="'女'"/>女
+    	</label>  
+		<br></br>
+		<br></br>
+		   邮箱:
+		<input th:field="*{email}" type="text" name="mail" style="width: 315px;height: 25px;float: right;"/>
+		<br></br>
+		<br></br>
+		收货地址:
+		<input th:field="*{address}" type="text" name="homeaddress" style="width: 315px;height: 25px;float: right;"/>
+		<br></br>
+		<br></br>
+		常用电话:
+		<input th:field="*{telephone}" type="text" name="phonenumber" style="width: 315px;height: 25px;float: right;"/>
+		<br></br>
+		<br></br>
+		真实姓名:
+		<input th:field="*{realName}" type="text" name="realname" style="width: 315px;height: 25px;float: right;"/>
+		<br></br>
+		<br></br>
+		<input type="submit" value="信息修改提交" style="position: absolute;left: 50px;top: 320px;width: 140px;height: 40px;background: #CCFFFF"/>
+		<button style="position: absolute;left: 230px;top: 320px;width: 140px;height: 40px;background: #CCFFFF"><a href="index.html" th:href="@{/logout}">登出</a></button>
+		</form>
+	</div>
+	<center>
+	<img th:src="@{/images/botton.png}" src="../images/botton.png" style="width:1452px;"/>
+	</center>
+
+</body>
+</html>

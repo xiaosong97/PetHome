@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.thymeleaf.org" lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>购物车</title>
+
+	<style>
+	
+		a{ 
+			color:black;
+			text-decoration: none;
+		}
+		#headsite {
+  			padding: 0px;
+  			
+		}
+		#title{
+			color: #00FFCC;
+		}
+		#bottom{
+			padding: 0px;
+			width: 1452px;
+			height: 90px;
+		}
+		#down{
+			color: #00FFCC;
+		}
+		#img1{
+			border-width:0px;
+  			left:0px;
+  			top:0px;
+  			width:1452px;
+  			height:629px;
+		}
+		#base{
+			width:1452px;
+			font-family: '宋体';
+			font-style: 'normal';
+		}
+		#u691 {
+			  border-width:0px;
+			  width:auto;
+			  color: #999999;
+			  font-size: 30px;
+			  font-weight: bold;
+			}
+		#u692 {
+			  border-width:0px;
+			  width:auto;
+			  color: #FF0000;
+			  font-weight: bold;
+			}
+		#table{
+			  border: 1px solid rgba(242, 242, 242, 1);			 
+			  column-width: auto;
+			  margin-top: 15px;
+			  color: #000000;
+			  background-color: rgb(243, 215, 205);
+			  height: auto;
+
+		}
+		#commit{
+			border: 1px solid rgba(242, 242, 242, 1);			 
+			column-width: auto;
+			margin-top: 15px;
+			color: #000000;
+			background-color: rgba(242, 242, 242, 1);
+		}
+		#head{
+			height: 110px;
+			width: 1452px;
+			background: #FF6666;
+
+		}
+		.title{
+			color: white;
+			font-size: 20px;
+			position: absolute;
+			top: 30px;
+			font-weight: bold;
+		}
+		.title:hover{
+			color: pink;
+		}
+		#shoppingcar{
+			background: white;
+			height: 50px;
+			width:142px;
+			position: absolute;
+			top: 30px;
+			line-height: 50px;
+			left: 1400px;
+			padding-left: 30px;
+			font-weight: bold;
+		}
+	</style>
+	<script type="text/javascript" >
+		function changechk() {
+			var chk = document.getElementById('selectall');
+			var chk1 = document.getElementById('select1');
+			var chk2 = document.getElementById('select2');
+			chk.checked=false;
+			chk1.checked=false;
+			chk2.checked=false;
+		}
+		function change() {
+			
+			
+			var chkall = document.getElementById('selectall');
+			var chkall2 = document.getElementById('selectall2');
+			var chk1 = document.getElementById('select1');
+			var chk2 = document.getElementById('select2');
+			if (chkall.checked) {
+				chk1.checked=true;
+				chk2.checked=true;
+				chkall2.checked=true;
+				//alert("success");
+			}else{
+				chk1.checked=false;
+				chk2.checked=false;
+				chkall2.checked=false;
+			}
+
+		}
+		function change2() {
+			
+			
+			var chkall = document.getElementById('selectall');
+			var chkall2 = document.getElementById('selectall2');
+			var chk1 = document.getElementById('select1');
+			var chk2 = document.getElementById('select2');
+			if (chkall2.checked) {
+				chk1.checked=true;
+				chk2.checked=true;
+				chkall.checked=true;
+				//alert("success");
+			}else{
+				chk1.checked=false;
+				chk2.checked=false;
+				chkall.checked=false;
+			}
+
+		}
+
+		function del1() {
+			var parent=document.getElementById("shoplist");
+			var child=document.getElementById("shop1");
+			parent.removeChild(child);
+			recoverchkall();
+		}
+
+		function del2() {
+			var parent=document.getElementById("shoplist");
+			var child=document.getElementById("shop2");
+			parent.removeChild(child);
+			recoverchkall();
+		}
+		function delsel() {
+			var parent=document.getElementById("shoplist");
+			var child1=document.getElementById("shop1");
+			var child2=document.getElementById("shop2");
+			var chk1 = document.getElementById('select1');
+			var chk2 = document.getElementById('select2');
+			//alert(chk1.checked);
+			//alert(chk2.checked);
+			if (chk1.checked==true) {
+				parent.removeChild(child1);
+			}
+			if (chk2.checked==true) {
+				parent.removeChild(child2);
+			}
+			recoverchkall();
+		}
+		function recover() {
+			var chkall = document.getElementById('selectall');
+			var chkall2 = document.getElementById('selectall2');
+			var chk1 = document.getElementById('select1');
+			var chk2 = document.getElementById('select2');
+			if (chk1.checked!=true||chk2.checked!=true) {
+				recoverchkall();
+			}
+		}
+		function recoverchkall() {
+			var chkall1 = document.getElementById('selectall');
+			var chkall2 = document.getElementById('selectall2');
+			chkall1.checked=false;
+			chkall2.checked=false;
+		}
+
+		function dec1() {
+			var shop1numl=document.getElementById('shop1num');
+			var shop1singleprice=document.getElementById('shop1singleprice').innerHTML;
+			var shop1pricel=document.getElementById('shop1price');
+			
+			var shop1num=shop1numl.innerHTML;
+			if (shop1num>1) {
+				shop1num--;	
+				shop1numl.innerHTML=shop1num;
+			}
+			//alert(shop1num);
+			shop1pricel.innerHTML=shop1singleprice*shop1num;
+			shopTotal();			
+		}
+		function add1() {
+			var shop1numl=document.getElementById('shop1num');
+			var shop1num=shop1numl.innerHTML;
+			var shop1singleprice=document.getElementById('shop1singleprice').innerHTML;
+			var shop1pricel=document.getElementById('shop1price');
+			
+			shop1num++;
+			shop1numl.innerHTML=shop1num;
+			//alert(shop1singleprice);
+			//alert(shop1num);
+			shop1pricel.innerHTML=shop1singleprice*shop1num;
+			shopTotal();					
+		}
+		function dec2() {
+			var shop2numl=document.getElementById('shop2num');
+			var shop2num=shop2numl.innerHTML;
+			var shop2singleprice=document.getElementById('shop2singleprice').innerHTML;
+			var shop2pricel=document.getElementById('shop2price');
+			
+			if (shop2num>1) {
+				shop2num--;
+				shop2numl.innerHTML=shop2num;	
+			}
+			shop2pricel.innerHTML=shop2singleprice*shop2num;				
+			shopTotal();
+		}
+		function add2() {
+			var shop2numl=document.getElementById('shop2num');
+			var shop2num=shop2numl.innerHTML;
+			var shop2singleprice=document.getElementById('shop2singleprice').innerHTML;
+			var shop2pricel=document.getElementById('shop2price');
+			
+			shop2num++;
+			shop2numl.innerHTML=shop2num;
+			//alert(shop2singleprice);
+			//alert(shop2num);
+			shop2pricel.innerHTML=shop2singleprice*shop2num;
+			shopTotal();			
+		}
+
+		function shopTotal(){
+			var chk1 = document.getElementById('select1');
+			var chk2 = document.getElementById('select2'); 
+			var shop1num = document.getElementById('shop1num').innerHTML;
+			var shop2num = document.getElementById('shop2num').innerHTML;
+			var shop1singleprice = document.getElementById('shop1singleprice').innerHTML;
+			var shop2singleprice = document.getElementById('shop2singleprice').innerHTML;
+			//alert(shop1num);
+			//alert(shop2num);
+			//alert(shop1price);
+			//alert(shop2price);
+
+			var totalNuml = document.getElementById('totalNum');
+			var totalPricel = document.getElementById('totalPrice');
+
+			if (chk1.checked==false) {
+				shop1num = 0;
+			}
+			if (chk2.checked==false) {
+				shop2num = 0;
+			}
+			//alert(shop1num);
+			//alert(shop2num);
+			totalNuml.innerHTML = parseInt(shop1num)+parseInt(shop2num);
+			totalPrice.innerHTML = parseInt(shop1singleprice)*parseInt(shop1num) + parseInt(shop2singleprice)*parseInt(shop2num);
+		}
+	</script>
+</head>
+<center>
+<body>
+	<div id="base" align="center" style="width: 1452px;">
+		<div id="head">
+			<img th:src="@{/images/logo.png}" src="../images/logo.png" style="width: 230px;height: 110px;position: absolute;top:10px;left: 230px"/>
+			<p class="title" style="left: 550px"><a href="index.html" th:href="@{/}">首页</a></p>
+		<p class="title" style="left: 670px"><a href="person.html" th:href="@{/person}">个人设置</a></p>
+		<p class="title" style="left: 830px"><a href="order.html" th:href="@{/order}">我的订单</a></p>
+		<div id="shoppingcar"><a href="cart.html" th:href="@{/cart}"><img th:src="@{/images/title.png}" src="../images/title.png" style="top: 8px;left:10px; position:absolute;"/> 我的购物车</a></div>
+
+		</div>
+		<div style="height: 100px;margin-top: 20px;">
+	  			<p>
+	  				<span id="u691" align="left" style="margin-top: 20px;margin-left: -900px;">购物车</span>
+	  			</p>
+	  			<p>
+	  				<span id="u692" align="left" style="margin-top: 30px;margin-left: -920px;">全部商品</span>	
+	  			</p>
+	  			
+	  	</div>
+		<div>
+			<!--<img th:src="@{/images/u686.jpg}" src="../images/u686.jpg" id="img1"/>-->
+	  		
+	  		
+			<table id="table" cellpadding="10%" cellspacing="5%" >
+				<thead style="background-color:#949292">
+					<tr>
+						<th width="100px"><button><a href="cart.html" th:href="@{/cart/chooseall}">全选</a></button></th>
+						<th width="150px">图片</th>
+						<th width="350px">商品</th>
+						<th width="100px">单价</th>
+						<th width="250px">数量</th>
+						<th width="100px">操作</th>
+					</tr>
+				</thead>
+				<tbody id="shoplist">
+					<tr th:each="cartProduct:${cartProducts}">
+						<th th:switch="${cartProduct.getCart().getState()}">
+							<p th:case="true">选中</p>
+							<p th:case="false">未选中</p>
+							<button><a href="cart.html" th:href="@{/cart/choose/{cartid}(cartid=${cartProduct.getCart().getId()})}">转换</a></button>
+						</th>
+						<th align="left" >
+							<img  th:src="@{'/images/'+${cartProduct.getTitlePhoto().getPath()}}" class="img-responsive" style="width: 100px;height:110px" />
+						</th>
+						<th align="left" th:text="${cartProduct.getProduct().getName()}"></th>
+						<th><div id="shop1singleprice" style="text-align: center;">￥<span th:text="${cartProduct.getProduct().getPerPrice()}"></span></div></th>
+						<th>
+							<div style="float: left;width: 40px ;margin-left: 70px;" align="right">
+								<button>
+									<a href="cart.html" th:href="@{/cart/minus/{cartid}(cartid=${cartProduct.getCart().getId()})}">-</a>
+								</button>
+							</div>
+							<div style="float: left;width: 40px;" id="shop1num">
+								<span th:text="${cartProduct.getCart().getNumber()}">12</span>
+							</div>
+							<div style="float: left;width: 40px" align="left">
+								<button style="margin-left: 5px;">
+									<a href="cart.html" th:href="@{/cart/plus/{cartid}(cartid=${cartProduct.getCart().getId()})}">+</a>
+								</button>
+							</div>
+						</th>
+						<th>
+							<button><a href="cart.html" th:href="@{/cart/delete/{cartid}(cartid=${cartProduct.getCart().getId()})}">删除</a></button>
+						</th>
+					</tr>
+				</tbody>
+			</table>
+			<table id="commit" cellpadding="10%" cellspacing="5%" width="1041px">
+				<tr>
+					<th width="100px">商品总数：</th>
+					<th width="50px" style="text-align: left;" th:text="${totalnumber}"></th>
+					<th style="text-align: left;">件</th>
+					<th>&nbsp;&nbsp;&nbsp;</th>
+					<th width="123px">总价：￥<span style="color: rgb(255,0,0);" id="totalPrice" th:text="${sum}"></span></th>
+					<th width="120px">
+						<a href="placeorder.html" th:href="@{/placeorder}"><input type="button" style="background-color: rgb(255,0,0);color: #FFFFFF;width: 100px;height: 40px;border-radius: 25px;" value="去结算"/></a>
+					</th>
+				</tr>
+			</table>
+		</div>
+		<footer id="bottom">
+			<img th:src="@{/images/botton.png}" src="../images/botton.png" style="width:1452px"/>
+    	</footer>
+	</div>
+	
+</body>
+</center>
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.thymeleaf.org" lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>注册</title>
+	<script src="../dist/sweetalert.min.js" th:src="@{/dist/sweetalert.min.js}"></script>
+	<link rel="stylesheet" type="text/css"  th:href="@{/dist/sweetalert.css}"/>
+	<script th:inline="JavaScript">
+	/*<![CDATA[*/
+	var p=0;
+	var a=0;
+	var b=0;
+	var c=0;
+	function xianshi(){
+		fenlei.style.display="block";
+	}
+	function yincang(){
+		fenlei.style.display="none";
+	}
+	function checkUser(){ 	  
+			var user=document.getElementById("newname").value;    
+			var userId=document.getElementById("newname");    
+			var reg=/^(\w){6,16}$/;
+			if(user.length<6){
+				swal({title:"长度6-16位",
+				
+				timer:1000,
+			showConfirmButton: false});
+				a=0;
+				newname.value="";
+				return;
+			}  
+			if(user.length>16){
+				swal({title:"长度6-16位",
+				
+				timer:1000,
+			showConfirmButton: false});
+				a=0;
+				newname.value="";
+				return;
+			}    
+			if(reg.test(user)==false){     
+			  
+			swal({title:"请输入字母、数字、下划线",
+				
+				timer:1000,
+			showConfirmButton: false});
+			newname.value="";
+			a= 0;
+			
+			return;
+
+			}
+			if(reg.test(user)==true){
+			swal({title:"用户名有效",
+				
+				timer:500,
+			showConfirmButton: false});    
+			a= 1;
+				}
+
+			}
+
+
+		/*密码验证*/   
+		function checkPwd(){   
+			var pwd=document.getElementById("password").value;    
+			var pwdId=document.getElementById("password");    
+			   
+			var reg=/^(\w){6,16}$/;
+			if(pwd.length<6){
+				swal({title:"长度6-16位",
+				
+				timer:1000,
+			showConfirmButton: false});
+				b=0;
+				password.value="";
+				return;
+			}  
+			if(pwd.length>16){
+				swal({title:"长度6-16位",
+				
+				timer:1000,
+			showConfirmButton: false});
+				b=0;
+				password.value="";
+				return;
+			}      
+			if(reg.test(pwd)==false){     
+			swal({title:"请输入字母、数字、下划线",
+				
+				timer:1000,
+			showConfirmButton: false}); 
+			password.value="";
+			b= 0;
+			return;
+	   
+			} 
+			if(reg.test(pwd)==true){
+				swal({title:"密码有效",
+				
+				timer:500,
+			showConfirmButton: false}); 
+			 b= 1;}
+			}
+
+			function check6(){
+
+				var pwd1=document.getElementById("password").value;
+				var pwd2=document.getElementById("sure").value;
+				
+
+				
+				if(pwd1!=pwd2)  {
+					swal({title:"密码不相同",
+				text:"请重新检查密码",
+				timer:1000,
+			showConfirmButton: false}); 
+				sure.value="";
+				c= 0;
+				return;}
+				if(pwd1==pwd2){
+					if(pwd2!=""){
+						swal({title:"密码相同",
+						timer:500,
+						showConfirmButton: false}); 
+					c= 1;}}
+			}
+
+					
+
+			function fun1(){
+				
+				if(a!=1){
+					alert("信息不完整 请补全"); 
+					return;
+				
+				}
+				if(b!=1){
+					alert("信息不完整 请补全");
+					return;
+					
+				}
+				if(c!=1){
+					alert("信息不完整 请补全");
+					return;
+				}
+			
+			}
+	/*]]>*/
+	</script>
+	<style type="text/css" >
+	
+	
+	
+	
+	a{ 
+		color:black;
+		text-decoration: none;
+	}
+	.head{
+		width: 139px;
+		height: 54px;
+		text-align: center;
+		line-height: 54px;
+		font-size: 28px;
+		font-family: Arial;
+		color: white;
+		font-weight: bold;
+		position: absolute;}
+	.login{
+		width: 86px;
+		height: 40px;
+		position: absolute;
+		font-size: 18px;
+		color: black;
+		font-weight: bold;
+		text-align: center;
+		line-height: 40px;
+		top: 70px;
+		}
+	#fenlei{
+		width: 628px;
+		height: 190px;
+		background: white;
+		position: absolute;
+		top:163px;
+		left: 390px;
+		border: solid 1px #cc3300;
+		display: none;
+	}
+	#mao{
+	color: #990000;
+	font-size: 14px;
+	position: absolute;
+	left: 20px;
+	}
+		#mao1{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 20px;
+		top: 35px;
+		}
+		#mao2{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 20px;
+		top: 65px;
+		}
+		#mao3{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 20px;
+		top: 95px;
+		}
+		#mao4{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 20px;
+		top: 125px;
+		}
+		#mao1:hover{
+		color: red;
+		}
+		#mao2:hover{
+			color: red;
+		}
+		#mao3:hover{
+			color: red;
+		}
+		#mao4:hover{
+			color: red;
+		}
+	#gou{
+	color: #990000;
+	font-size: 14px;
+	position: absolute;
+	left: 150px;
+	}
+		#gou1{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 150px;
+		top: 35px;
+		}
+		#gou2{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 150px;
+		top: 65px;
+		}
+		#gou3{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 150px;
+		top: 95px;
+		}
+		#gou4{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 150px;
+		top: 125px;
+		}
+		#gou1:hover{
+		color: red;
+		}
+		#gou2:hover{
+			color: red;
+		}
+		#gou3:hover{
+			color: red;
+		}
+		#gou4:hover{
+			color: red;
+		}
+	#shui{
+	color: #990000;
+	font-size: 14px;
+	position: absolute;
+	left: 280px;
+	}
+		#shui1{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 280px;
+		top: 35px;
+		}
+		#shui2{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 280px;
+		top: 65px;
+		}
+		#shui3{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 280px;
+		top: 95px;
+		}
+		#shui4{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 280px;
+		top: 125px;
+		}
+			#shui1:hover{
+			color: red;
+			}
+			#shui2:hover{
+				color: red;
+			}
+			#shui3:hover{
+				color: red;
+			}
+			#shui4:hover{
+				color: red;
+			}
+	#xiao{
+	color: #990000;
+	font-size: 14px;
+	position: absolute;
+	left: 410px;
+	}
+		#xiao1{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 410px;
+		top: 35px;
+		}
+		#xiao2{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 410px;
+		top: 65px;
+		}
+		#xiao3{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 410px;
+		top: 95px;
+		}
+		#xiao4{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 410px;
+		top: 125px;
+		}
+			#xiao1:hover{
+			color: red;
+			}
+			#xiao2:hover{
+				color: red;
+			}
+			#xiao3:hover{
+				color: red;
+			}
+			#xiao4:hover{
+				color: red;
+			}
+	#pa{
+	color: #990000;
+	font-size: 14px;
+	position: absolute;
+	left: 540px;
+	}
+		#pa1{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 540px;
+		top: 35px;
+		}
+		#pa2{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 540px;
+		top: 65px;
+		}
+		#pa3{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 540px;
+		top: 95px;
+		}
+		#pa4{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 540px;
+		top: 125px;
+		}
+			#pa1:hover{
+			color: red;
+			}
+			#pa2:hover{
+				color: red;
+			}
+			#pa3:hover{
+				color: red;
+			}
+			#pa4:hover{
+				color: red;
+			}
+	.head:hover{
+		background: #CC0000;
+	}
+	.login:hover{
+		background: #CC3300;
+	}
+	#under1{
+		width: 580px;
+		height: 280px;
+		position: absolute;
+		top: 715px;
+		left: 65px;
+	}
+	#under2{
+		width: 580px;
+		height: 280px;
+		position: absolute;
+		top: 715px;
+		left: 645px;
+	}
+	#under3{
+		width: 580px;
+		height: 280px;
+		position: absolute;
+		top: 715px;
+		left: 1225px;
+	}
+	#under4{
+		width: 580px;
+		height: 280px;
+		position: absolute;
+		top: 995px;
+		left: 355px;
+	}
+	#under5{
+		width: 580px;
+		height: 280px;
+		position: absolute;
+		top: 995px;
+		left: 935px;
+	}
+	#botton{
+		width: 1758px;
+		height: 250px;
+		top:1275px;
+		left: 65px;
+		position: absolute;
+	}
+
+	#login{
+		background: white;
+		width: 410px;
+		height: 380px;
+		position: absolute;
+		top: 290px;
+		left: 1100px;
+	}
+	#loginbotton{
+		top: 1000px
+	}
+	#denglu{
+		background:white;
+		font-size: 28px;
+		width: 90px;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		position: absolute;
+		left: 0px;
+		font-weight: bold;
+	}
+	#zhuce{
+		background:#FC8603;
+		font-size: 28px;
+		width: 90px;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		position: absolute;
+		left: 90px;
+		font-weight: bold;
+	}
+	.th{
+		font-size: 20px;
+		color: #333333;
+		position: absolute;
+		left: 30px;
+	}
+	#button{
+		background:#FC8603;
+		width: 300px;
+		height: 40px;
+		font-size: 28px;
+		color: white;
+		top: 320px;
+		left: 60px;
+		position: absolute;
+	}
+	#newname{
+		top:105px;
+		left:130px;
+		position: absolute;
+		width: 250px;
+		height: 40px;
+		font-size: 15px;
+	}
+	#password{
+		top:165px;
+		left:130px;
+		position: absolute;
+		width: 250px;
+		height: 40px;
+		font-size: 15px;
+	}
+	#sure{
+		top:225px;
+		left:130px;
+		position: absolute;
+		width: 250px;
+		height: 40px;
+		font-size: 15px;
+	}
+	</style>
+
+</head>
+<center>
+<body>
+	<div style="width:1760px; height:100px;background:#FC8603;" >
+			<img th:src="@{/images/logo.png}" src="../images/logo.png" class="img-responsive" style="width:240px;height: 155px;" align="left"/>
+			<img th:src="@{/images/logo1.png}" src="../images/logo1.png" class="img-responsive" style="width:420px;height: 99px; left:500px;position: absolute"/>
+			<div class="login" style="left:1440px"><a href="login.html" th:href="@{/login}">登录</a></div>
+			<div class="login" style="left:1520px"><a href="register.html" th:href="@{/register}">注册</a></div>
+		</div>
+		<div style="width:1760px; height:55px;background:#cc3300;">
+			<div class="head"  style="left: 360px;"><a href="index.html" th:href="@{/}">首页</a></div>
+			<div class="head"  style="left: 510px;" onmouseover="xianshi()"><a>全部分类</a></div>
+				<div id="fenlei" onmouseover="xianshi()" onmouseout="yincang()" >
+					<p id="mao"><a href="productlist.html" th:href="@{/productlist/1(animal='cat')}">猫猫专区&gt;</a></p>
+						<p class="xiaolei" id="mao1"><a href="productlist.html" th:href="@{/productlist/3(animal='cat',classification='pet')}">宠物猫</a></p>
+						<p class="xiaolei" id="mao2"><a href="productlist.html" th:href="@{/productlist/3(animal='cat',classification='food')}">猫零食</a></p>
+						<p class="xiaolei" id="mao3"><a href="productlist.html" th:href="@{/productlist/3(animal='cat',classification='daily')}">猫用品</a></p>
+						<p class="xiaolei" id="mao4"><a href="productlist.html" th:href="@{/productlist/3(animal='cat',classification='toy')}">猫玩具</a></p>
+					<p id="gou"><a href="productlist.html" th:href="@{/productlist/1(animal='dog')}">狗狗专区&gt;</a></p>
+						<p class="xiaolei" id="gou1"><a href="productlist.html" th:href="@{/productlist/3(animal='dog',classification='pet')}">宠物狗</a></p>
+						<p class="xiaolei" id="gou2"><a href="productlist.html" th:href="@{/productlist/3(animal='dog',classification='food')}">狗零食</a></p>
+						<p class="xiaolei" id="gou3"><a href="productlist.html" th:href="@{/productlist/3(animal='dog',classification='daily')}">狗用品</a></p>
+						<p class="xiaolei" id="gou4"><a href="productlist.html" th:href="@{/productlist/3(animal='dog',classification='toy')}">狗玩具</a></p>
+					<p id="shui"><a href="productlist.html" th:href="@{/productlist/1(animal='fish')}">水族专区&gt;</a></p>
+						<p class="xiaolei" id="shui1"><a href="productlist.html" th:href="@{/productlist/3(animal='fish',classification='pet')}">宠物鱼类</a></p>
+						<p class="xiaolei" id="shui2"><a href="productlist.html" th:href="@{/productlist/3(animal='fish',classification='food')}">鱼饲料</a></p>
+						<p class="xiaolei" id="shui3"><a href="productlist.html" th:href="@{/productlist/3(animal='fish',classification='daily')}">水族用品</a></p>
+						<p class="xiaolei" id="shui4"><a href="productlist.html" th:href="@{/productlist/3(animal='fish',classification='toy')}">水族玩具</a></p>
+					<p id="xiao"><a href="productlist.html" th:href="@{/productlist/1(animal='small')}">小宠专区&gt;</a></p>
+						<p class="xiaolei" id="xiao1"><a href="productlist.html" th:href="@{/productlist/3(animal='small',classification='pet')}">袖珍小宠</a></p>
+						<p class="xiaolei" id="xiao2"><a href="productlist.html" th:href="@{/productlist/3(animal='small',classification='food')}">小宠零食</a></p>
+						<p class="xiaolei" id="xiao3"><a href="productlist.html" th:href="@{/productlist/3(animal='small',classification='daily')}">小宠用品</a></p>
+						<p class="xiaolei" id="xiao4"><a href="productlist.html" th:href="@{/productlist/3(animal='small',classification='toy')}">小宠玩具</a></p>
+					<p id="pa"><a href="productlist.html" th:href="@{/productlist/1(animal='insect')}">爬虫专区&gt;</a></p>
+						<p class="xiaolei" id="pa1"><a href="productlist.html" th:href="@{/productlist/3(animal='insect',classification='pet')}">宠物昆虫</a></p>
+						<p class="xiaolei" id="pa2"><a href="productlist.html" th:href="@{/productlist/3(animal='insect',classification='food')}">昆虫饲料</a></p>
+						<p class="xiaolei" id="pa3"><a href="productlist.html" th:href="@{/productlist/3(animal='insect',classification='daily')}">昆虫用品</a></p>
+						<p class="xiaolei" id="pa4"><a href="productlist.html" th:href="@{/productlist/3(animal='insect',classification='toy')}">昆虫玩具</a></p>	
+				</div>
+			<div class="head"  style="left: 680px;"><a href="productlist.html" th:href="@{/productlist/1(animal='cat')}">猫猫</a></div>
+			<div class="head"  style="left: 810px;"><a href="productlist.html" th:href="@{/productlist/1(animal='dog')}">狗狗</a></div>
+			<div class="head"  style="left: 940px;"><a href="productlist.html" th:href="@{/productlist/1(animal='fish')}">水族</a></div>
+			<div class="head"  style="left: 1070px;"><a href="productlist.html" th:href="@{/productlist/1(animal='small')}">小宠</a></div>
+			<div class="head"  style="left: 1200px;"><a href="productlist.html" th:href="@{/productlist/1(animal='insect')}">爬虫</a></div>
+		</div>
+	<img src="../images/u147.jpg" th:src="@{/images/u147.jpg}" style="width: 1212px;height: 625px;"/>
+	<div id="login">
+		<div style="border-bottom:  solid 2px #FFCC00;width: 410px;height: 50px">
+			<div id="denglu"><a href="login.html" th:href="@{/login}">登录</a></div>
+			<div id="zhuce"><a href="register.html" th:href="@{/register}">注册</a></div>
+		</div>
+		<div id="content">
+			<form action="#" th:action="@{/register}" th:object="${member}" method="post">
+				<p class="th" style="top:100px">新用户名:</p>
+				<input th:field="*{name}" type="text" name="newname" id="newname"  placeholder="请输入用户名" onblur="checkUser()"/>
+				<p class="th" style="top:160px">设置密码:</p>
+				<input th:field="*{password}" type="password" name="password" id="password"  placeholder="请输入密码" onblur="checkPwd()"/>
+				<p class="th" style="top:220px">确认密码:</p>
+				<input type="password" th:field="*{address}" name="sure" id="sure"  placeholder="请确认密码" onblur="check6()"/>
+				<input type="submit" id="button" value="注册" onclick="fun1()"  />
+			</form>
+			
+		</div>
+			
+		
+	</div>
+	<img src="../images/loginbotton.png" th:src="@{/images/loginbotton.png}" id="loginbotton" />
+
+</body>
+</center>
+</html>

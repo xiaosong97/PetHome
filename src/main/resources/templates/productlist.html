@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.thymeleaf.org" lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>商品列表</title>
+	<script>
+	function xianshi(){
+		fenlei.style.display="block";
+	}
+	function yincang(){
+		fenlei.style.display="none";
+	}
+	</script>
+	<style type="text/css" >
+	a{ 
+		color:black;
+		text-decoration: none;
+	}
+	.head{
+		width: 139px;
+		height: 54px;
+		text-align: center;
+		line-height: 54px;
+		font-size: 28px;
+		font-family: Arial;
+		color: white;
+		font-weight: bold;
+		position: absolute;}
+	.login{
+		width: 86px;
+		height: 40px;
+		position: absolute;
+		font-size: 18px;
+		color: black;
+		font-weight: bold;
+		text-align: center;
+		line-height: 40px;
+		top: 70px;
+		}
+	#fenlei{
+		width: 628px;
+		height: 190px;
+		background: white;
+		position: absolute;
+		top:163px;
+		left: 390px;
+		border: solid 1px #cc3300;
+		display: none;
+	}
+	#mao{
+	color: #990000;
+	font-size: 14px;
+	position: absolute;
+	left: 20px;
+	}
+		#mao1{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 20px;
+		top: 35px;
+		}
+		#mao2{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 20px;
+		top: 65px;
+		}
+		#mao3{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 20px;
+		top: 95px;
+		}
+		#mao4{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 20px;
+		top: 125px;
+		}
+		#mao1:hover{
+		color: red;
+		}
+		#mao2:hover{
+			color: red;
+		}
+		#mao3:hover{
+			color: red;
+		}
+		#mao4:hover{
+			color: red;
+		}
+	#gou{
+	color: #990000;
+	font-size: 14px;
+	position: absolute;
+	left: 150px;
+	}
+		#gou1{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 150px;
+		top: 35px;
+		}
+		#gou2{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 150px;
+		top: 65px;
+		}
+		#gou3{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 150px;
+		top: 95px;
+		}
+		#gou4{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 150px;
+		top: 125px;
+		}
+		#gou1:hover{
+		color: red;
+		}
+		#gou2:hover{
+			color: red;
+		}
+		#gou3:hover{
+			color: red;
+		}
+		#gou4:hover{
+			color: red;
+		}
+	#shui{
+	color: #990000;
+	font-size: 14px;
+	position: absolute;
+	left: 280px;
+	}
+		#shui1{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 280px;
+		top: 35px;
+		}
+		#shui2{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 280px;
+		top: 65px;
+		}
+		#shui3{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 280px;
+		top: 95px;
+		}
+		#shui4{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 280px;
+		top: 125px;
+		}
+			#shui1:hover{
+			color: red;
+			}
+			#shui2:hover{
+				color: red;
+			}
+			#shui3:hover{
+				color: red;
+			}
+			#shui4:hover{
+				color: red;
+			}
+	#xiao{
+	color: #990000;
+	font-size: 14px;
+	position: absolute;
+	left: 410px;
+	}
+		#xiao1{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 410px;
+		top: 35px;
+		}
+		#xiao2{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 410px;
+		top: 65px;
+		}
+		#xiao3{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 410px;
+		top: 95px;
+		}
+		#xiao4{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 410px;
+		top: 125px;
+		}
+			#xiao1:hover{
+			color: red;
+			}
+			#xiao2:hover{
+				color: red;
+			}
+			#xiao3:hover{
+				color: red;
+			}
+			#xiao4:hover{
+				color: red;
+			}
+	#pa{
+	color: #990000;
+	font-size: 14px;
+	position: absolute;
+	left: 540px;
+	}
+		#pa1{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 540px;
+		top: 35px;
+		}
+		#pa2{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 540px;
+		top: 65px;
+		}
+		#pa3{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 540px;
+		top: 95px;
+		}
+		#pa4{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 540px;
+		top: 125px;
+		}
+			#pa1:hover{
+			color: red;
+			}
+			#pa2:hover{
+				color: red;
+			}
+			#pa3:hover{
+				color: red;
+			}
+			#pa4:hover{
+				color: red;
+			}
+	.head:hover{
+		background: #CC0000;
+	}
+	.login:hover{
+		background: #CC3300;
+	}
+	#under1{
+		width: 580px;
+		height: 280px;
+		position: absolute;
+		top: 715px;
+		left: 65px;
+	}
+	#under2{
+		width: 580px;
+		height: 280px;
+		position: absolute;
+		top: 715px;
+		left: 645px;
+	}
+	#under3{
+		width: 580px;
+		height: 280px;
+		position: absolute;
+		top: 715px;
+		left: 1225px;
+	}
+	#under4{
+		width: 580px;
+		height: 280px;
+		position: absolute;
+		top: 995px;
+		left: 355px;
+	}
+	#under5{
+		width: 580px;
+		height: 280px;
+		position: absolute;
+		top: 995px;
+		left: 935px;
+	}
+	#botton{
+		width: 1758px;
+		height: 250px;
+		top:1275px;
+		left: 65px;
+		position: absolute;
+	}
+	
+	#daohang{
+		background: #F2F2F2;
+		width: 260px;
+		height: 37px;
+		text-align: center;
+		line-height: 37px;
+		font-size: 32px;
+		font-weight: bold;
+		position: absolute;
+		left: 80px;
+		top: 220px;
+		border: solid 1px #A1A1A1;
+		color: #5E5E5E;
+	}
+	.all{
+		background:  #F2F2F2;
+		width: 260px;
+		height: 37px;
+		text-align: center;
+		line-height: 37px;
+		font-size: 20px;
+		color: #333333;
+		font-weight: bold;
+		border: solid 1px #A1A1A1;
+		left: 80px;
+		position: absolute;
+	}
+	.abstract{
+		background: white;
+		width: 260px;
+		height: 30px;
+		text-align: center;
+		line-height: 30px;
+		font-size: 18px;
+		color: black;
+		left: 80px;
+		position: absolute;
+		border-right:solid 1px #A1A1A1;
+		border-left:solid 1px #A1A1A1;
+	}
+	.abstract:hover{
+		color: #990000;
+	}
+	</style>
+</head>
+<center>
+<body>
+	<div style="width:1760px; height:100px;background:#FC8603;" >
+			<img th:src="@{/images/logo.png}" src="../images/logo.png" class="img-responsive" style="width:240px;height: 155px;" align="left"/>
+			<img th:src="@{/images/logo1.png}" src="../images/logo1.png" class="img-responsive" style="width:420px;height: 99px; left:500px;position: absolute"/>
+			<div th:switch="${res}">
+				<div th:case="false">
+					<div class="login" style="left:1440px"><a href="person.html" th:href="@{/person}">个人中心</a></div>
+					<a href="cart.html" th:href="@{/cart}"><img th:src="@{/images/login.png}" src="../images/login.png" class="img-responsive" style="left:1520px;top:73px;position: absolute;"/></a>
+				</div>
+				<div th:case="true">
+					<div class="login" style="left:1440px"><a href="login.html" th:href="@{/login}">登录</a></div>
+					<div class="login" style="left:1520px"><a href="register.html" th:href="@{/register}">注册</a></div>
+				</div>
+			</div>
+		</div>
+		<div style="width:1760px; height:55px;background:#cc3300;">
+			<div class="head"  style="left: 360px;"><a href="index.html" th:href="@{/}">首页</a></div>
+			<div class="head"  style="left: 510px;" onmouseover="xianshi()"><a>全部分类</a></div>
+				<div id="fenlei" onmouseover="xianshi()" onmouseout="yincang()" >
+					<p id="mao"><a href="productlist.html" th:href="@{/productlist/1(animal='cat')}">猫猫专区&gt;</a></p>
+						<p class="xiaolei" id="mao1"><a href="productlist.html" th:href="@{/productlist/3(animal='cat',classification='pet')}">宠物猫</a></p>
+						<p class="xiaolei" id="mao2"><a href="productlist.html" th:href="@{/productlist/3(animal='cat',classification='food')}">猫零食</a></p>
+						<p class="xiaolei" id="mao3"><a href="productlist.html" th:href="@{/productlist/3(animal='cat',classification='daily')}">猫用品</a></p>
+						<p class="xiaolei" id="mao4"><a href="productlist.html" th:href="@{/productlist/3(animal='cat',classification='toy')}">猫玩具</a></p>
+					<p id="gou"><a href="productlist.html" th:href="@{/productlist/1(animal='dog')}">狗狗专区&gt;</a></p>
+						<p class="xiaolei" id="gou1"><a href="productlist.html" th:href="@{/productlist/3(animal='dog',classification='pet')}">宠物狗</a></p>
+						<p class="xiaolei" id="gou2"><a href="productlist.html" th:href="@{/productlist/3(animal='dog',classification='food')}">狗零食</a></p>
+						<p class="xiaolei" id="gou3"><a href="productlist.html" th:href="@{/productlist/3(animal='dog',classification='daily')}">狗用品</a></p>
+						<p class="xiaolei" id="gou4"><a href="productlist.html" th:href="@{/productlist/3(animal='dog',classification='toy')}">狗玩具</a></p>
+					<p id="shui"><a href="productlist.html" th:href="@{/productlist/1(animal='fish')}">水族专区&gt;</a></p>
+						<p class="xiaolei" id="shui1"><a href="productlist.html" th:href="@{/productlist/3(animal='fish',classification='pet')}">宠物鱼类</a></p>
+						<p class="xiaolei" id="shui2"><a href="productlist.html" th:href="@{/productlist/3(animal='fish',classification='food')}">鱼饲料</a></p>
+						<p class="xiaolei" id="shui3"><a href="productlist.html" th:href="@{/productlist/3(animal='fish',classification='daily')}">水族用品</a></p>
+						<p class="xiaolei" id="shui4"><a href="productlist.html" th:href="@{/productlist/3(animal='fish',classification='toy')}">水族玩具</a></p>
+					<p id="xiao"><a href="productlist.html" th:href="@{/productlist/1(animal='small')}">小宠专区&gt;</a></p>
+						<p class="xiaolei" id="xiao1"><a href="productlist.html" th:href="@{/productlist/3(animal='small',classification='pet')}">袖珍小宠</a></p>
+						<p class="xiaolei" id="xiao2"><a href="productlist.html" th:href="@{/productlist/3(animal='small',classification='food')}">小宠零食</a></p>
+						<p class="xiaolei" id="xiao3"><a href="productlist.html" th:href="@{/productlist/3(animal='small',classification='daily')}">小宠用品</a></p>
+						<p class="xiaolei" id="xiao4"><a href="productlist.html" th:href="@{/productlist/3(animal='small',classification='toy')}">小宠玩具</a></p>
+					<p id="pa"><a href="productlist.html" th:href="@{/productlist/1(animal='insect')}">爬虫专区&gt;</a></p>
+						<p class="xiaolei" id="pa1"><a href="productlist.html" th:href="@{/productlist/3(animal='insect',classification='pet')}">宠物昆虫</a></p>
+						<p class="xiaolei" id="pa2"><a href="productlist.html" th:href="@{/productlist/3(animal='insect',classification='food')}">昆虫饲料</a></p>
+						<p class="xiaolei" id="pa3"><a href="productlist.html" th:href="@{/productlist/3(animal='insect',classification='daily')}">昆虫用品</a></p>
+						<p class="xiaolei" id="pa4"><a href="productlist.html" th:href="@{/productlist/3(animal='insect',classification='toy')}">昆虫玩具</a></p>	
+				</div>
+			<div class="head"  style="left: 680px;"><a href="productlist.html" th:href="@{/productlist/1(animal='cat')}">猫猫</a></div>
+			<div class="head"  style="left: 810px;"><a href="productlist.html" th:href="@{/productlist/1(animal='dog')}">狗狗</a></div>
+			<div class="head"  style="left: 940px;"><a href="productlist.html" th:href="@{/productlist/1(animal='fish')}">水族</a></div>
+			<div class="head"  style="left: 1070px;"><a href="productlist.html" th:href="@{/productlist/1(animal='small')}">小宠</a></div>
+			<div class="head"  style="left: 1200px;"><a href="productlist.html" th:href="@{/productlist/1(animal='insect')}">爬虫</a></div>
+	</div>
+	<div id="daohang">商品分类</div>
+	<div class="all" style="top:257px ">&diams;全部分类</div>
+	<div class="all" style="top:294px "><a href="productlist.html" th:href="@{/productlist/1(animal='cat')}">&diams;猫猫专区</a></div>
+		<div class="abstract" style="top: 331px"><a href="productlist.html" th:href="@{/productlist/3(animal='cat',classification='pet')}">&gt;宠物猫</a></div>
+		<div class="abstract" style="top: 361px"><a href="productlist.html" th:href="@{/productlist/3(animal='cat',classification='food')}">&gt;猫零食</a></div>
+		<div class="abstract" style="top: 391px"><a href="productlist.html" th:href="@{/productlist/3(animal='cat',classification='daily')}">&gt;猫用品</a></div>
+		<div class="abstract" style="top: 421px"><a href="productlist.html" th:href="@{/productlist/3(animal='cat',classification='toy')}">&gt;猫玩具</a></div>
+	<div class="all" style="top:451px "><a href="productlist.html" th:href="@{/productlist/1(animal='dog')}">&diams;狗狗专区</a></div>
+		<div class="abstract" style="top: 488px"><a href="productlist.html" th:href="@{/productlist/3(animal='dog',classification='pet')}">&gt;宠物狗</a></div>
+		<div class="abstract" style="top: 518px"><a href="productlist.html" th:href="@{/productlist/3(animal='dog',classification='food')}">&gt;狗零食</a></div>
+		<div class="abstract" style="top: 548px"><a href="productlist.html" th:href="@{/productlist/3(animal='dog',classification='daily')}">&gt;狗用品</a></div>
+		<div class="abstract" style="top: 578px"><a href="productlist.html" th:href="@{/productlist/3(animal='dog',classification='toy')}">&gt;狗玩具</a></div>
+	<div class="all" style="top:608px "><a href="productlist.html" th:href="@{/productlist/1(animal='fish')}">&diams;水族专区</a></div>
+		<div class="abstract" style="top: 645px"><a href="productlist.html" th:href="@{/productlist/3(animal='fish',classification='pet')}">&gt;宠物鱼类</a></div>
+		<div class="abstract" style="top: 675px"><a href="productlist.html" th:href="@{/productlist/3(animal='fish',classification='food')}">&gt;鱼类饲料</a></div>
+		<div class="abstract" style="top: 705px"><a href="productlist.html" th:href="@{/productlist/3(animal='fish',classification='daily')}">&gt;水族用品</a></div>
+		<div class="abstract" style="top: 735px"><a href="productlist.html" th:href="@{/productlist/3(animal='fish',classification='toy')}">&gt;水族玩具</a></div>
+	<div class="all" style="top:765px "><a href="productlist.html" th:href="@{/productlist/1(animal='small')}">&diams;小宠专区</a></div>
+		<div class="abstract" style="top: 802px"><a href="productlist.html" th:href="@{/productlist/3(animal='small',classification='pet')}">&gt;袖珍小宠</a></div>
+		<div class="abstract" style="top: 832px"><a href="productlist.html" th:href="@{/productlist/3(animal='small',classification='food')}">&gt;小宠零食</a></div>
+		<div class="abstract" style="top: 862px"><a href="productlist.html" th:href="@{/productlist/3(animal='small',classification='daily')}">&gt;小宠用品</a></div>
+		<div class="abstract" style="top: 892px"><a href="productlist.html" th:href="@{/productlist/3(animal='small',classification='toy')}">&gt;小宠玩具</a></div>
+	<div class="all" style="top:922px "><a href="productlist.html" th:href="@{/productlist/1(animal='insect')}">&diams;爬虫专区</a></div>
+		<div class="abstract" style="top: 959px"><a href="productlist.html" th:href="@{/productlist/3(animal='insect',classification='pet')}">&gt;宠物昆虫</a></div>
+		<div class="abstract" style="top: 989px"><a href="productlist.html" th:href="@{/productlist/3(animal='insect',classification='food')}">&gt;昆虫饲料</a></div>
+		<div class="abstract" style="top: 1019px"><a href="productlist.html" th:href="@{/productlist/3(animal='insect',classification='daily')}">&gt;昆虫用品</a></div>
+		<div class="abstract" style="top: 1049px;border-bottom:solid 1px #A1A1A1"><a href="productlist.html" th:href="@{/productlist/3(animal='insect',classification='toy')}">&gt;昆虫玩具</a></div>
+		
+	<div style="top:250px;left:450px;position: absolute;z-index:-214748364">
+		<table>
+    		<tr th:each="displayProduct:${displayProducts}">
+    			<td style="width:250px"><img th:src="@{'/images/'+${displayProduct.getTitlePhoto().getPath()}}" class="img-responsive" style="width:150px;height:150px"/></td>
+    			<td th:text="${displayProduct.getProduct().getName()}" style="width:500px"></td>
+    			<td th:text="${displayProduct.getProduct().getPerPrice()}" style="width:250px"></td>
+    			<td>
+    			<p><a href="productdetail.html" th:href="@{/productdetail/{productid}(productid=${displayProduct.getProduct().getId()})}" style="width:150px">详情</a></p>
+    			<p><a href="index.html" th:href="@{/productdetail/{productid}/add(productid=${displayProduct.getProduct().getId()})}">加入购物车</a></p>
+    			</td>	
+    		</tr>
+    	</table>
+	</div>
+	
+</body>
+</center>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<title>订单确认</title>
+	<style>
+        #div1 {
+            width:950px;
+            height:auto;
+        	padding:50px;
+            background-color: white;
+        }
+        #div3 {
+            width:950px;
+            height:auto;
+            padding:50px;
+            background-color: white;
+        }
+        #div4 {
+            width:950px;
+            height:auto;
+            padding:50px;
+            background-color: white;
+        }
+        table,table tr th, table tr td { border:1px solid #999999; }
+        table { width: 808px;text-align: center; border-collapse: collapse; padding:2px;} 
+        tr { height:30px;}
+        #head{
+			height: 110px;
+			width: 1452px;
+			background: #FF6666;
+		}
+		.title{
+			color: white;
+			font-size: 20px;
+			position: absolute;
+			top: 30px;
+			font-weight: bold;
+		}
+		.title:hover{
+			color: pink;
+		}
+    </style>
+</head>
+<body>
+	<center>
+	<div id="head"><img th:src="@{/images/logo.png}" src="../images/logo.png" style="width: 230px;height: 110px;position: absolute;top:10px;left: 230px"/>
+		</div>
+	
+	<div id="div1">
+		<p style="font-size: 20px;font-family: arial;"><b>订单商品</b></p>
+		<table style="font-family: arial;font-size: 13px;margin-left: 70px;">
+			<thead style="background-color:#F2F2F2;">
+				<tr>
+					<th width="25%">商品编号</th>
+					<th width="25%">商品名称</th>
+					<th width="25%">商品数量</th>
+					<th width="25%">单价</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="cartProduct:${cartProducts}">
+					<td th:text="${cartProduct.getProduct().getId()}"></td>
+					<td th:text="${cartProduct.getProduct().getName()}"></td>
+					<td th:text="${cartProduct.getCart().getNumber()}"></td>
+					<td th:text="${cartProduct.getProduct().getPerPrice()}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div id="div3">
+		<p style="font-size: 20px;font-family: arial;"><b>收货人信息</b></p>
+		<table style="font-family: arial;font-size: 13px;margin-left: 70px;">
+			<tbody>
+				<tr>
+					<td width="10%">收货人姓名</td>
+					<td width="90%" th:text="${member.getName()}"></td>
+				</tr>
+				<tr>
+					<td width="10%">收货地址</td>
+					<td width="90%" th:text="${member.getAddress()}"></td>
+				</tr>
+				<tr>
+					<td width="10%">常用电话</td>
+					<td width="90%" th:text="${member.getTelephone()}"></td>
+				</tr>
+				<tr>
+					<td width="10%">常用邮箱</td>
+					<td width="90%" th:text="${member.getEmail()}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div id="div4">
+		<p style="font-size: 20px;font-family: arial;"><b>结算信息</b></p>
+		<table style="font-family: arial;font-size: 13px;margin-left: 70px;">
+				<tr>
+					<td width="25%">支付金额</td>
+					<td width="75%" th:text="${sum}"></td>
+				</tr>	
+		</table>
+		<button style="width: 140px;height: 40px;background: #FF6666;left:375px;position:relative;"><a href="index.html" th:href="@{/placeorder/place}">确认订单信息</a></button>
+	</div>
+	<footer id="bottom">
+	<img id="botton" src="../images/botton.png" th:src="@{/images/botton.png}" style="width: 1452px;"/>
+	</footer>
+	</center>
+</body>
+</html>

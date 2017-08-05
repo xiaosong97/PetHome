@@ -1,0 +1,309 @@
+.head{
+		width: 139px;
+		height: 54px;
+		text-align: center;
+		line-height: 54px;
+		font-size: 28px;
+		font-family: Arial;
+		color: white;
+		font-weight: bold;
+		position: absolute;}
+	.login{
+		width: 86px;
+		height: 40px;
+		position: absolute;
+		font-size: 18px;
+		color: black;
+		font-weight: bold;
+		text-align: center;
+		line-height: 40px;
+		top: 70px;
+		}
+	#fenlei{
+		width: 628px;
+		height: 190px;
+		background: white;
+		position: absolute;
+		top:163px;
+		left: 390px;
+		border: solid 1px #cc3300;
+		display: none;
+	}
+	#mao{
+	color: #990000;
+	font-size: 14px;
+	position: absolute;
+	left: 20px;
+	}
+		#mao1{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 20px;
+		top: 35px;
+		}
+		#mao2{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 20px;
+		top: 65px;
+		}
+		#mao3{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 20px;
+		top: 95px;
+		}
+		#mao4{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 20px;
+		top: 125px;
+		}
+		#mao1:hover{
+		color: red;
+		}
+		#mao2:hover{
+			color: red;
+		}
+		#mao3:hover{
+			color: red;
+		}
+		#mao4:hover{
+			color: red;
+		}
+	#gou{
+	color: #990000;
+	font-size: 14px;
+	position: absolute;
+	left: 150px;
+	}
+		#gou1{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 150px;
+		top: 35px;
+		}
+		#gou2{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 150px;
+		top: 65px;
+		}
+		#gou3{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 150px;
+		top: 95px;
+		}
+		#gou4{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 150px;
+		top: 125px;
+		}
+		#gou1:hover{
+		color: red;
+		}
+		#gou2:hover{
+			color: red;
+		}
+		#gou3:hover{
+			color: red;
+		}
+		#gou4:hover{
+			color: red;
+		}
+	#shui{
+	color: #990000;
+	font-size: 14px;
+	position: absolute;
+	left: 280px;
+	}
+		#shui1{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 280px;
+		top: 35px;
+		}
+		#shui2{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 280px;
+		top: 65px;
+		}
+		#shui3{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 280px;
+		top: 95px;
+		}
+		#shui4{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 280px;
+		top: 125px;
+		}
+			#shui1:hover{
+			color: red;
+			}
+			#shui2:hover{
+				color: red;
+			}
+			#shui3:hover{
+				color: red;
+			}
+			#shui4:hover{
+				color: red;
+			}
+	#xiao{
+	color: #990000;
+	font-size: 14px;
+	position: absolute;
+	left: 410px;
+	}
+		#xiao1{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 410px;
+		top: 35px;
+		}
+		#xiao2{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 410px;
+		top: 65px;
+		}
+		#xiao3{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 410px;
+		top: 95px;
+		}
+		#xiao4{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 410px;
+		top: 125px;
+		}
+			#xiao1:hover{
+			color: red;
+			}
+			#xiao2:hover{
+				color: red;
+			}
+			#xiao3:hover{
+				color: red;
+			}
+			#xiao4:hover{
+				color: red;
+			}
+	#pa{
+	color: #990000;
+	font-size: 14px;
+	position: absolute;
+	left: 540px;
+	}
+		#pa1{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 540px;
+		top: 35px;
+		}
+		#pa2{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 540px;
+		top: 65px;
+		}
+		#pa3{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 540px;
+		top: 95px;
+		}
+		#pa4{
+		color: #666666 ;
+		font-size: 14px;
+		position: absolute;
+		left: 540px;
+		top: 125px;
+		}
+			#pa1:hover{
+			color: red;
+			}
+			#pa2:hover{
+				color: red;
+			}
+			#pa3:hover{
+				color: red;
+			}
+			#pa4:hover{
+				color: red;
+			}
+	.head:hover{
+		background: #CC0000;
+	}
+	.login:hover{
+		background: #CC3300;
+	}
+	#under1{
+		width: 580px;
+		height: 280px;
+		position: absolute;
+		top: 715px;
+		left: 65px;
+	}
+	#under2{
+		width: 580px;
+		height: 280px;
+		position: absolute;
+		top: 715px;
+		left: 645px;
+	}
+	#under3{
+		width: 580px;
+		height: 280px;
+		position: absolute;
+		top: 715px;
+		left: 1225px;
+	}
+	#under4{
+		width: 580px;
+		height: 280px;
+		position: absolute;
+		top: 995px;
+		left: 355px;
+	}
+	#under5{
+		width: 580px;
+		height: 280px;
+		position: absolute;
+		top: 995px;
+		left: 935px;
+	}
+	#botton{
+		width: 1758px;
+		height: 250px;
+		top:1275px;
+		left: 65px;
+		position: absolute;
+	}
